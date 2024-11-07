@@ -279,6 +279,8 @@ fn canister_post_upgrade() {
     }
     .expect("Couldn't upgrade canister.");
     log!(INFO, "Completed post upgrade");
+
+    governance_mut().set_deployed_version();
 }
 
 fn populate_finalize_disbursement_timestamp_seconds(governance_proto: &mut GovernanceProto) {
